@@ -1,0 +1,16 @@
+- name: creating ".env" dynamicly
+  hosts: localhost
+  tasks:
+    - debug:
+        var: hostvars['ansible_postgresql'].ansible_host
+        # var: hostvars['ansible_postgresql'].public_ip_address
+    - debug:
+        var: hostvars['ansible_react'].ansible_host
+    - debug:
+        var: hostvars['ansible_postgresql'].private_ip_address
+        # var: hostvars['ansible_postgresql'].private_ip_address
+    - debug:
+        var: hostvars['ansible_react'].ans_prvt_ip
+    - template:
+        src: /home/ec2-user/ansible/playbooks/.env.j2
+        dest: /home/ec2-user/ansible/playbooks/.env

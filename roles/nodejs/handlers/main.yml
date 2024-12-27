@@ -1,0 +1,14 @@
+---
+# handlers file for nodejs
+    - name: Launch nodejs docker container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        image: "{{ image_name }}"
+        state: started
+        ports: 
+        - "5000:5000"
+      register: container_info
+    
+    - name: print the container info
+      ansible.builtin.debug:
+        var: container_info
