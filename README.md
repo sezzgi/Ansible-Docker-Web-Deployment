@@ -1,49 +1,62 @@
-# Web Application Deployment with Ansible and Docker
+# ansible-docker-web-deployment
+
+Automated deployment of a full-stack web application using Ansible and Docker on AWS, demonstrating infrastructure automation and container orchestration at scale.
 
 ## Overview
-A production-grade deployment solution for a 3-tier web application using Ansible automation and Docker containers on AWS infrastructure. The project demonstrates infrastructure automation, configuration management, and container orchestration skills.
 
-## Purpose
-- Automate deployment of a web application across multiple environments
-- Ensure consistent, repeatable infrastructure setup
-- Demonstrate DevOps best practices for production deployments
-- Enable easy scaling and maintenance of distributed applications
+Production-grade deployment automation project that provisions and configures a multi-tier web application using configuration management and containerization.
 
-## Tech Stack
-- **Infrastructure:** AWS EC2
-- **Configuration Management:** Ansible
-- **Containerization:** Docker
-- **Application:** 
-  - Frontend: React
-  - Backend: Node.js
-  - Database: PostgreSQL
+## Features
 
-## Key Features
 - Automated multi-server deployment
 - Containerized microservices architecture
 - Configuration management with Ansible
-- Dynamic inventory management
-- Secure credential handling with Ansible Vault
-- Infrastructure as Code principles
+- Secure database management
+- Infrastructure automation
+- High availability design
 
 ## Architecture
 
-Three-tier architecture with:
-- React Frontend (Port 3000)
-- Node.js Backend (Port 5000)
-- PostgreSQL Database (Port 5432)
+- Control node managing multiple worker nodes
+- Containerized services (PostgreSQL, Node.js, React)
+- Automated security group configuration
+- Dynamic inventory management
+
 
 ## Quick Start
 
-### Prerequisites
-- AWS Account
-- Ansible installed on control node
-- Docker installed on worker nodes
+1. **Prerequisites**
+   - AWS Account
+   - Ansible installed
+   - Docker installed
+   - Git
 
-### Deployment Steps
-1. Clone the repository
-2. Configure AWS credentials
-3. Update inventory file
-4. Run Ansible playbook:
-```bash
-ansible-playbook main.yml
+2. **Deployment**
+   ```bash
+   # Clone repository
+   git clone [repository-url]
+
+   # Configure Ansible inventory
+   cd ansible-docker-web-deployment
+   cp inventory.example.yml inventory.yml
+
+   # Deploy infrastructure
+   ansible-playbook deploy.yml
+   ```
+
+3. **Access**
+   - Frontend: `http://[ec2-public-ip]:3000`
+   - Backend API: `http://[ec2-public-ip]:5000`
+
+## Project Structure
+```
+├── ansible/
+│   ├── playbooks/
+│   ├── roles/
+│   └── inventory/
+├── docker/
+│   ├── postgresql/
+│   ├── nodejs/
+│   └── react/
+└── README.md
+```
