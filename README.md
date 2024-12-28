@@ -1,22 +1,49 @@
-# Node.js & React Web App on AWS
+# Web Application Deployment with Ansible and Docker
 
-## Project Overview
-This project demonstrates the implementation of a modern web application using infrastructure as code principles. It showcases a production-ready deployment architecture that leverages containerization and automation to ensure reliability, scalability, and maintainability.
+## Overview
+A production-grade deployment solution for a 3-tier web application using Ansible automation and Docker containers on AWS infrastructure. The project demonstrates infrastructure automation, configuration management, and container orchestration skills.
 
-## Business Value
-The application serves as a user information management system, allowing organizations to securely collect and store user registration data. Key benefits include:
+## Purpose
+- Automate deployment of a web application across multiple environments
+- Ensure consistent, repeatable infrastructure setup
+- Demonstrate DevOps best practices for production deployments
+- Enable easy scaling and maintenance of distributed applications
 
-- **Automated Deployment**: Entire infrastructure can be deployed consistently and reliably using Ansible automation
-- **Containerized Architecture**: Microservices-based design using Docker ensures component isolation and scalability
-- **Cloud-Native**: Built for AWS cloud infrastructure, demonstrating modern cloud architecture principles
-- **Security-Focused**: Implements secure communication between services and protected database access
-- **Maintainable Design**: Clear separation of concerns between frontend, backend, and database layers
+## Tech Stack
+- **Infrastructure:** AWS EC2
+- **Configuration Management:** Ansible
+- **Containerization:** Docker
+- **Application:** 
+  - Frontend: React
+  - Backend: Node.js
+  - Database: PostgreSQL
 
-## Key Technical Achievements
-- Implemented complete Infrastructure as Code (IaC) solution using Ansible
-- Designed and deployed containerized microservices architecture
-- Created automated deployment pipelines for all application components
-- Established secure communication patterns between services
-- Implemented database persistence with proper security measures
+## Key Features
+- Automated multi-server deployment
+- Containerized microservices architecture
+- Configuration management with Ansible
+- Dynamic inventory management
+- Secure credential handling with Ansible Vault
+- Infrastructure as Code principles
 
-This project demonstrates expertise in modern DevOps practices, cloud architecture, containerization, and automation, making it an excellent example of production-grade application deployment.
+## Architecture
+
+Three-tier architecture with:
+- React Frontend (Port 3000)
+- Node.js Backend (Port 5000)
+- PostgreSQL Database (Port 5432)
+
+## Quick Start
+
+### Prerequisites
+- AWS Account
+- Ansible installed on control node
+- Docker installed on worker nodes
+
+### Deployment Steps
+1. Clone the repository
+2. Configure AWS credentials
+3. Update inventory file
+4. Run Ansible playbook:
+```bash
+ansible-playbook main.yml
